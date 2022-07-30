@@ -1,0 +1,142 @@
+/*------------------------------------------------------------------------------*/
+/*-----------------------------------PESTAÑAS-----------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+#pestanas {
+  /*float: top;*/
+  font-size: 2ex;
+  font-weight: bold;
+}
+
+#pestanas ul{
+  margin-left: -40px;    
+}
+
+#pestanas li{
+  list-style-type: none;
+  float: left;
+  text-align: center;
+  margin: 0px 1px -1px -0px;
+  /*background: darkgrey;*/
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid gray;
+  /*border-bottom: dimgray;*/
+  padding: 0px 20px 0px 20px;
+}
+
+#pestanas a:link{
+  text-decoration: none;
+  color: black;
+}
+
+#contenidopestanas{
+  clear: both;  
+  /*background: darkgrey;*/
+  /*padding: 20px 0px 20px 20px;*/
+  border-radius: 1px;
+  border-top-left-radius: 0px;
+  border: 1px solid gray;
+  height: 130px;
+}
+
+/*------------------------------------------------------------------------------*/
+/*-----------------------------------GENERAL------------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+*{
+    /*box-sizing: content-box;*/
+    font-family: "Roboto", sans-serif;
+    font-size: small;
+    /*padding-bottom: 1px;*/
+    
+}
+
+/*------------------------------------------------------------------------------*/
+/*-----------------------------------CANVAS-------------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+.graphContainer{
+  align-content: center;
+}
+#graph{
+  background-color:rgb(219, 253, 253);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*width: 100%;*/
+}
+
+/*------------------------------------------------------------------------------*/
+/*-----------------------------------INPUTS-------------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+.tableInputData{
+  white-space: nowrap;
+  /*border: 1px solid gray;*/
+  overflow-x: hidden;
+}
+.labels{
+  font-size: smaller;
+}
+.inputtransSld{
+  background-color: lightslategrey;
+  width: 79vmax;
+}
+.txtnum{
+  background-color: white;
+  font-size: smaller;
+  text-align: right;
+  width: 5rem;
+}
+/*------------------------------------------------------------------------------*/
+/*-----------------------------------OPCIONES-----------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+.optionBox{
+  display: inline;
+  font-size:xx-small;
+  white-space: nowrap;
+  font: bold;
+  padding:none;
+}
+.optionBox div{
+  padding: 5px;
+  display: inline;
+}
+.optionBox div input{
+  background-color: whitesmoke;
+  font-size: x-small;
+}
+
+/*------------------------------------------------------------------------------*/
+/*-----------------------------------RESULTADOS---------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+.tableResultsData{
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.rowResults td div{
+  display: inline;
+}
+.selUnit{
+  background-color: whitesmoke;
+  font-size: x-small;
+  width: 3rem;
+
+}
+.txtresult{
+  background-color: white;
+  font-size: smaller;
+  text-align: right;
+  width: 12rem;
+}
+.rowLbl td{
+  font-size: smaller;
+}
+.result label{
+  list-style: none;
+  font-size: xx-small;
+  align-items: center;
+}

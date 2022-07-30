@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es" style="background-color:rgb(255, 255, 255)">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="main.css" rel="stylesheet"/>
+  <title>3D</title>
+</head>
+
+<body onload="cambiarPestanna(1);"></body>
+
+  <h1>3D</h1>
+  <div class="graphContainer">
+    <canvas class="graph" id="graph" width="840px" height="480px"></canvas>
+    <button id="btnReset" onclick="reset()">Reset</button>
+  </div>
+
+  <!--tabs-->
+  <div id="pestanas">
+    <ul id="lista">
+        <li id="pestana1"><a href='javascript:cambiarPestanna(1);'>Traslación</a></li>
+        <li id="pestana2"><a href='javascript:cambiarPestanna(2);'>Rotación</a></li>
+        <li id="pestana3"><a href='javascript:cambiarPestanna(3);'>Cámara</a></li>
+        <li id="pestana4"><a href='javascript:cambiarPestanna(4);'>Opciones</a></li>
+    </ul>
+  </div>
+
+  <!--tabs container-->
+  <div id="contenidopestanas">
+    <div id="cpestana1">        <!--translate tab-->
+      <div class="tableInputData">
+        <table>
+          <tbody>
+            <tr>
+              <td><label class="labels">trasladar en x</label></td>
+              <td><input type="text" id="txttx" value="0" class="txtnum"></td>
+              <td><div name="selUnitContainer"></div></td>
+              <td><input type="range" min="-64" max="64" step="1" value="0" class="inputtransSld" id="sldtx"></td>
+            </tr>
+            <tr>
+              <td><label class="labels">trasladar en y</label></td>
+              <td><input type="text" id="txtty" value="0" class="txtnum"></td>
+              <td><div name="selUnitContainer"></div></td>
+              <td><input type="range" min="-64" max="64" step="1" value="0"class="inputtransSld" id="sldty"></td>
+            </tr>
+            <tr>
+              <td><label class="labels">trasladar en z</label></td>
+              <td><input type="text"  id="txttz" value="0" class="txtnum"></td>
+              <td><div name="selUnitContainer"></div></td>
+              <td><input type="range" min="0.5" max="1500" step="0.5" value="1000" class="inputtransSld" id="sldtz"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+    <div id="cpestana2">        <!--rotation tab-->
+      <div class="tableInputData">
+        <table>
+          <tbody>
+            <tr>
+              <td><label class="labels">rotar en x</label></td>
+              <td><input type="text" id="txtrx" value="0" class="txtnum"></td>
+              <td><input type="range" min="-360" max="360" step="0.5" value="0" class="inputtransSld" id="sldrx"></td>
+            </tr>
+            <tr>
+              <td><label class="labels">rotar en y</label></td>
+              <td><input type="text" id="txtry" value="0" class="txtnum"></td>
+              <td><input type="range" min="-360" max="360" step="0.5" value="0"class="inputtransSld" id="sldry"></td>
+            </tr>
+            <tr>
+              <td><label class="labels">rotar en z</label></td>
+              <td><input type="text"  id="txtrz" value="0" class="txtnum"></td>
+              <td><input type="range" min="-360" max="360" step="0.5" value="0" class="inputtransSld" id="sldrz"></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="cpestana3">        <!--rotation camera tab-->
+      <div class="tableInputData">
+        <table>
+          <tbody>
+            <tr>
+              <td><label class="labels">rotar en x</label></td>
+              <td><input type="text" id="txtrcx" value="0" class="txtnum"></td>
+              <td><input type="range" min="-360" max="360" step="1" value="0" class="inputtransSld" id="sldrcx"></td>
+            </tr>
+            <tr>
+              <td><label class="labels">rotar en y</label></td>
+              <td><input type="text" id="txtrcy" value="0" class="txtnum"></td>
+              <td><input type="range" min="-360" max="360" step="1" value="0"class="inputtransSld" id="sldrcy"></td>
+            </tr>
+            <tr>
+              <td><label class="labels">rotar en z</label></td>
+              <td><input type="text"  id="txtrcz" value="0" class="txtnum"></td>
+              <td><input type="range" min="-360" max="360" step="1" value="0" class="inputtransSld" id="sldrcz"></td>
+            </tr>
+            <tr>
+              <td><label class="labels">Zoom (F)             </label></td>
+              <td><input type="text"  id="ZoomF" value="24" class="txtnum"></td>
+              <td><input type="range" min="16" max="100" step="0.1" value="24" class="inputSld" id="sldF"></td>     
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="cpestana4">        <!--options tab-->
+      <div class="tableInputData">
+        <label><input type="radio" id="rdbCube" checked>Cubo</label>
+        <label><input type="radio" id="rdbSphere">Esfera</label>
+        <div id="CantSphereVertsContainer">
+          <table>
+            <tbody>
+              <tr>
+                <td><label class="labels">cantidad de vértices</label></td>
+                <td><input type="text" id="txtSphereVerts" value="20" class="txtnum"></td>
+                <td><input type="range" min="3" max="28" step="1" value="20" class="inputtransSld" id="sldSphereVerts"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--TABLA DE CONTROLES DE ENTRADA-->
+
+
+
+  <script src="tabs.js"></script>   
+  <script src="control.js"></script>
+  <script src="graph3D.js"></script>
+</body>
+</html>
